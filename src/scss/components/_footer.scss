@@ -1,0 +1,37 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.footer {
+  padding: clamp(30px, 6.2vw, 78px) 0 24px;
+
+  &__wrapper,
+  &__items {
+    @include flex-all-sb;
+  }
+
+  .copyright {
+    br {
+      display: none;
+    }
+  }
+
+  &__items {
+    gap: 24px;
+  }
+
+  @include media(mobile-l) {
+    &__wrapper {
+      flex-direction: column-reverse;
+      gap: 30px;
+      text-align: center;
+    }
+  }
+
+  @include media(mobile-s) {
+    .copyright {
+      br {
+        display: block;
+      }
+    }
+  }
+}
