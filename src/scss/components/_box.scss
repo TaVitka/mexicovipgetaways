@@ -1,0 +1,104 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.box {
+  $root: &;
+
+  &__item {
+    @include flex-all-sb;
+    gap: clamp(24px, 3.4vw, 48px);
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__content {
+    width: 100%;
+
+    h3 {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-main);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &--simple {
+    #{$root}__item {
+      padding-right: clamp(40px, 7.2vw, 103px);
+
+      &:not(:last-child) {
+        margin-bottom: clamp(30px, 6.2vw, 88px);
+      }
+    }
+
+    #{$root}__content {
+      max-width: 469px;
+    }
+
+    #{$root}__item {
+      &:not(&--reverse) #{$root}__content {
+        text-align: right;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    &__image {
+      border-radius: var(--radius-mobile);
+    }
+
+    &--simple {
+      #{$root}__item {
+        padding-right: 0;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &__item {
+      flex-direction: column;
+    }
+
+    &--simple {
+      #{$root}__content {
+        max-width: 100%;
+
+        p {
+          max-width: 576px;
+        }
+      }
+
+      #{$root}__item {
+        &:not(&--reverse) #{$root}__content {
+          text-align: left;
+        }
+      }
+
+      #{$root}__image {
+        img {
+          aspect-ratio: 5 / 3;
+        }
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    &--simple {
+      #{$root}__image {
+        img {
+          aspect-ratio: 3 / 2;
+        }
+      }
+    }
+  }
+}
