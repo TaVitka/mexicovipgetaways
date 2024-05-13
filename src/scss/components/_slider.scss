@@ -1,0 +1,73 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+*[class].slider {
+  &__pagination,
+  &__arrows {
+    @include flex-all-sb;
+
+    position: absolute;
+    top: unset;
+    z-index: 5;
+    width: fit-content;
+    background-color: var(--color-white);
+  }
+
+  &__pagination {
+    left: 50%;
+    bottom: 35px;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      margin: 0;
+      background-color: var(--color-brown-400);
+      opacity: 0.2;
+
+      &-active {
+        opacity: 1;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &__arrows {
+    bottom: clamp(100px, 10.5vw, 152px);
+    right: 32px;
+    gap: 16px;
+  }
+
+  &__arrow {
+    position: relative;
+    width: 64px;
+    height: 48px;
+    padding: 18px 24px;
+    border: 2.5px solid var(--color-brown-400);
+    border-radius: var(--radius-main);
+
+    &.swiper-button-disabled {
+      opacity: 0.2;
+    }
+
+    &::before {
+      @include cover-background;
+
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16.5px;
+      height: 12px;
+      background-image: url("../images/icons/arrow-icon.svg");
+    }
+
+    &--prev::before {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+}

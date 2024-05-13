@@ -17,7 +17,7 @@ function onBurgerBtnClick(e) {
 
     setTimeout(() => {
       this?.classList.remove('opened');
-    }, 400);
+    }, 100);
   }
 
   this?.classList.add('opened');
