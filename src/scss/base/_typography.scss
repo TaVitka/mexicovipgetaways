@@ -3,7 +3,8 @@
 
 h1,
 h2,
-h3 {
+h3,
+.price {
   font-weight: var(--fw-700);
   line-height: 1.21;
 }
@@ -16,7 +17,8 @@ h2 {
   font-size: clamp(30px, 4.5vw, 64px);
 }
 
-h3 {
+h3,
+.price {
   font-size: clamp(20px, 1.7vw, 24px);
 }
 
@@ -44,4 +46,8 @@ button {
   font-size: 16px;
   line-height: 1.21;
   color: var(--color-brown-400);
+}
+
+.price {
+  color: var(--color-brown-460);
 }
