@@ -1,0 +1,35 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.hero {
+  $root: &;
+  padding-top: clamp(30px, 4.5vw, 64px);
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1,
+  img {
+    margin-bottom: 24px;
+  }
+
+  img {
+    border-radius: var(--radius-main);
+  }
+
+  &__texts {
+    max-width: 596px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  @include media(tablet) {
+    img {
+      border-radius: var(--radius-mobile);
+    }
+  }
+}
