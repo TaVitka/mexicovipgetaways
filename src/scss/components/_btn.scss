@@ -1,0 +1,38 @@
+/* stylelint-disable declaration-no-important */
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+*[class].btn {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin: 0;
+  padding: 15px 23px;
+  border: 1.5px solid var(--color-brown-400);
+  border-radius: var(--radius-main);
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-500);
+  font-size: clamp(16px, 2vi, 18px);
+  line-height: 1;
+  text-transform: capitalize;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--color-brown-400);
+  background-color: var(--color-cream-100);
+  transition-property: background-color, color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+
+  &--reverse,
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-brown-400);
+  }
+
+  &--reverse {
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-blue-700);
+    }
+  }
+}
