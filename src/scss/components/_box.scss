@@ -181,6 +181,12 @@
       border-radius: var(--radius-mobile);
     }
 
+    &:not(&--simple) {
+      #{$root}__item {
+        border-radius: var(--radius-mobile);
+      }
+    }
+
     &--simple {
       #{$root}__item {
         padding-right: 0;
@@ -203,10 +209,6 @@
           aspect-ratio: 3/2;
         }
       }
-
-      .btn {
-        width: 100%;
-      }
     }
   }
 
@@ -227,10 +229,6 @@
     &__extra {
       grid-template-columns: 1fr;
       grid-auto-rows: auto;
-
-      .btn {
-        width: 100%;
-      }
     }
 
     &--simple {

@@ -21,13 +21,6 @@
     }
   }
 
-  &__article {
-    @include flex-sb;
-    flex-direction: column;
-    gap: clamp(16px, 1.7vw, 24px);
-    height: 100%;
-  }
-
   &__link {
     &::before {
       content: "";
@@ -90,12 +83,31 @@
     }
   }
 
+  &--tours {
+    #{$root}__article {
+      @include flex-sb;
+      flex-direction: column;
+      gap: clamp(16px, 1.7vw, 24px);
+      height: 100%;
+    }
+  }
+
   @include media(tablet-wide) {
     &--num {
       #{$root}__item {
         &::before {
           bottom: -24px;
         }
+      }
+    }
+
+    &--slider {
+      #{$root}__item {
+        padding-bottom: 60px;
+      }
+
+      #{$root}__content {
+        padding-right: 0;
       }
     }
   }
@@ -106,17 +118,6 @@
 
       img {
         border-radius: var(--radius-mobile);
-      }
-    }
-
-    &--slider {
-      #{$root}__item {
-        padding-bottom: 60px;
-        width: auto !important;
-      }
-
-      #{$root}__content {
-        padding-right: 0;
       }
     }
 
@@ -133,6 +134,16 @@
           img {
             aspect-ratio: 2/1;
           }
+        }
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &--slider {
+      #{$root}__item {
+        img {
+          aspect-ratio: 3/2;
         }
       }
     }
