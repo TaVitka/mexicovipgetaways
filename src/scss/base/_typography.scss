@@ -4,6 +4,7 @@
 h1,
 h2,
 h3,
+.title,
 .price {
   font-weight: var(--fw-700);
   line-height: 1.21;
@@ -20,6 +21,11 @@ h2 {
 h3,
 .price {
   font-size: clamp(20px, 1.7vw, 24px);
+}
+
+.title {
+  font-size: clamp(24px, 2.5vw, 36px);
+  color: var(--color-brown-400);
 }
 
 .text {

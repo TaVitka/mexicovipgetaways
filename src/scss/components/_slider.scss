@@ -2,6 +2,17 @@
 @use "../utils/mixins/"as*;
 
 *[class].slider {
+  $root: &;
+  max-width: 90vw;
+
+  &__slides {
+    max-width: inherit;
+
+    li {
+      max-width: inherit;
+    }
+  }
+
   &__pagination,
   &__arrows {
     @include flex-all-sb;
@@ -68,6 +79,12 @@
 
     &--prev::before {
       transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+
+  &--destinations {
+    #{$root}__arrows {
+      bottom: clamp(100px, 12.5vw, 174px);
     }
   }
 }

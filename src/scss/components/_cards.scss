@@ -61,6 +61,45 @@
     }
   }
 
+  &--num {
+    #{$root}__items {
+      counter-reset: num;
+    }
+
+    #{$root}__item {
+      position: relative;
+      padding: clamp(16px, 1.7vw, 24px) clamp(16px, 1.7vw, 24px) clamp(100px, 16.4vw, 236px);
+      overflow: hidden;
+
+      &::before {
+        content: "0" counter(num);
+        counter-increment: num;
+        position: absolute;
+        right: 0;
+        bottom: -54px;
+        font-size: clamp(92px, 12vw, 164px);
+        line-height: 1;
+        color: var(--color-brown-460);
+      }
+    }
+  }
+
+  &--destinations {
+    #{$root}__item {
+      padding-bottom: 86px;
+    }
+  }
+
+  @include media(tablet-wide) {
+    &--num {
+      #{$root}__item {
+        &::before {
+          bottom: -24px;
+        }
+      }
+    }
+  }
+
   @include media(tablet) {
     &__item {
       border-radius: var(--radius-mobile);
