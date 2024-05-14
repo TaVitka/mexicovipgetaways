@@ -61,7 +61,8 @@
 
     #{$root}__item {
       position: relative;
-      padding: clamp(16px, 1.7vw, 24px) clamp(16px, 1.7vw, 24px) clamp(100px, 16.4vw, 236px);
+      min-height: clamp(250px, 29vw, 417px);
+      padding: clamp(16px, 1.7vw, 24px) clamp(16px, 1.7vw, 24px) clamp(100px, 13.4vw, 184px);
       overflow: hidden;
 
       &::before {

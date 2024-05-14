@@ -5,7 +5,7 @@ let options = {
   spaceBetween: 24,
   speed: 1500,
   autoplay: {
-    delay: 5000,
+    delay: 6000,
   },
   modules: [Navigation, Scrollbar, Pagination, Autoplay],
   draggable: true,
